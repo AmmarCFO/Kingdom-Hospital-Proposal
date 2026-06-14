@@ -1,0 +1,6 @@
+{
+  "name": "Kingdom Hospital Nursing Housing Proposal",
+  "description": "Bilingual interactive B2B housing solution proposal dashboard presenting accommodation plans for Kingdom Hospital nursing staff by Mathwaa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
