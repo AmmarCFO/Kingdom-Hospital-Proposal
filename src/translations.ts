@@ -148,7 +148,7 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
   ar: {
     header: {
       tagline: "مثوى: حلول السكن المؤسسي",
-      toggleLabel: "English (LTR)",
+      toggleLabel: "English",
       navProposal: "المقترح",
       navProperty: "العقار",
       navPricing: "أسعار الوحدات",
@@ -333,7 +333,7 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
   en: {
     header: {
       tagline: "Mathwaa: Corporate Residential Solutions",
-      toggleLabel: "العربية (RTL)",
+      toggleLabel: "العربية",
       navProposal: "Proposal",
       navProperty: "Property",
       navPricing: "Pricing Options",
