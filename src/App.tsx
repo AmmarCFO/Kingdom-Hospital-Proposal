@@ -40,21 +40,12 @@ export default function App() {
   const [units, setUnits] = useState<number>(158);
   const maxNurses = units * 2;
 
-  // Option 1 Calculations (Standard 24-Mo)
-  const opt1PerNurseMonth = 1321;
-  const opt1PerNurseYear = 15850;
-  const opt1PerUnitMonth = 2642;
-  const opt1PerUnitYear = 31700;
-  const opt1TotalAnnual = units * opt1PerUnitYear;
-
-  // Option 2 Calculations (Flexible 12-Mo)
-  const opt2PerNurseMonth = 1562.50;
-  const opt2PerNurseYear = 18750;
-  const opt2PerUnitMonth = 3125;
-  const opt2PerUnitYear = 37500;
-  const opt2TotalAnnual = units * opt2PerUnitYear;
-
-  const totalSavings = opt2TotalAnnual - opt1TotalAnnual;
+  // Standard Package Calculations
+  const perNurseMonth = 1321;
+  const perNurseYear = 15850;
+  const perUnitMonth = 2642;
+  const perUnitYear = 31700;
+  const totalAnnual = units * perUnitYear;
 
   // State for FAQ accordion
   const [openFaq, setOpenFaq] = useState<number[]>([]);
@@ -618,19 +609,13 @@ export default function App() {
             <p className="text-navy/60 mt-2 font-light">{t.pricing.sectionSub}</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+          <div className="max-w-md mx-auto">
             
-            {/* OPTION 1 - RECOMMENDED */}
+            {/* CORE HOUSING PACKAGE CARD */}
             <div className="bg-navy text-white rounded-[32px] p-6 sm:p-10 shadow-luxury border-2 border-gold flex flex-col justify-between relative transform hover:scale-[1.01] transition-all">
-              
-              {/* Recommended Ribbon */}
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-white text-xs font-black uppercase tracking-widest px-6 py-2 rounded-full shadow-lg flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>{t.pricing.bestValueBadge}</span>
-              </div>
 
               <div>
-                <div className="flex items-start justify-between border-b border-white/10 pb-6 mb-6 mt-2">
+                <div className="flex items-start justify-between border-b border-white/10 pb-6 mb-6">
                   <div>
                     <h3 className="heading-font text-xl sm:text-2xl font-bold">{t.pricing.opt1Title}</h3>
                     <p className="text-gold text-xs font-semibold mt-1 flex items-center gap-1">
@@ -639,27 +624,27 @@ export default function App() {
                     </p>
                   </div>
                   <div className="bg-white/10 text-white/95 text-[11px] px-3 py-1 rounded font-mono shrink-0">
-                    MATHWAA-01
+                    MATHWAA-STD
                   </div>
                 </div>
 
                 {/* HERO PRICE: PER NURSE */}
                 <div className="mb-6">
-                  <p className="text-white/60 text-xs sm:text-sm font-semibold uppercase">{lang === "ar" ? "التكلفة الأساسية بكل ممرضة شهريًا (الأكثر بروزاً)" : "Cost Per Nurse / Month (Primary)"}</p>
+                  <p className="text-white/60 text-xs sm:text-sm font-semibold uppercase">{lang === "ar" ? "التكلفة التشغيلية لكل ممرضة شهريًا" : "Cost Per Nurse / Month"}</p>
                   <div className="flex items-baseline gap-1.5 mt-1.5">
                     <span className="text-4xl sm:text-6xl font-black heading-font text-gold">1,321</span>
                     <span className="text-sm font-semibold text-white/80">{lang === "ar" ? "ريال سعودي" : "SAR"}</span>
                   </div>
                   <p className="text-xs text-white/40 mt-1">
-                    {lang === "ar" ? "يعوض بـ" : "Equivalent to"} <span className="font-mono text-white/80">SAR 15,850</span> {lang === "ar" ? "ممرضة سنويًا" : "per nurse / year"}
+                    {lang === "ar" ? "يعادل" : "Equivalent to"} <span className="font-mono text-white/80">SAR 15,850</span> {lang === "ar" ? "لكل ممرضة سنويًا" : "per nurse / year"}
                   </p>
                 </div>
 
                 {/* SECONDARY PRICE: PER UNIT */}
                 <div className="bg-white/5 border border-white/10 rounded-xl p-4 mb-6">
                   <div className="flex justify-between items-center text-xs text-white/50 mb-1">
-                    <span>{lang === "ar" ? "تكلفة الوحدة السكنية (الغرفة)" : "Cost Per Apartment Unit"}</span>
-                    <span className="font-semibold text-white/70">{lang === "ar" ? "إشغال ثنائي" : "Double occupants"}</span>
+                    <span>{lang === "ar" ? "كلفة الوحدة السكنية (الغرفة)" : "Cost Per Apartment Unit"}</span>
+                    <span className="font-semibold text-white/70">{lang === "ar" ? "إشغال ثنائي" : "Double occupancy"}</span>
                   </div>
                   <div className="flex flex-col xs:flex-row justify-between xs:items-baseline gap-1">
                     <p className="text-sm sm:text-base text-white/90 font-bold">
@@ -692,78 +677,7 @@ export default function App() {
                 onClick={() => handleScheduleVisit("standard")}
                 className="w-full bg-gold hover:bg-[#b18e47] text-white text-sm font-bold py-3 px-4 rounded-xl transition-all shadow-luxury mt-6"
               >
-                {lang === "ar" ? "اختيار الباقة الأساسية" : "Select Standard Package"}
-              </button>
-
-            </div>
-
-            {/* OPTION 2 */}
-            <div className="bg-white text-navy rounded-[32px] p-6 sm:p-10 shadow-luxury border border-gold/20 flex flex-col justify-between relative transform hover:scale-[1.01] transition-all">
-              
-              <div>
-                <div className="flex items-start justify-between border-b border-navy/5 pb-6 mb-6">
-                  <div>
-                    <h3 className="heading-font text-xl sm:text-2xl font-bold">{t.pricing.opt2Title}</h3>
-                    <p className="text-navy/50 text-xs font-semibold mt-1 flex items-center gap-1">
-                      <Check className="w-3.5 h-3.5 text-gold" />
-                      {t.pricing.opt2Differentiator}
-                    </p>
-                  </div>
-                  <div className="bg-navy/5 text-navy/70 text-[11px] px-3 py-1 rounded font-mono shrink-0">
-                    MATHWAA-02
-                  </div>
-                </div>
-
-                {/* HERO PRICE: PER NURSE */}
-                <div className="mb-6">
-                  <p className="text-navy/60 text-xs sm:text-sm font-semibold uppercase">{lang === "ar" ? "التكلفة الأساسية بكل ممرضة شهريًا" : "Cost Per Nurse / Month"}</p>
-                  <div className="flex items-baseline gap-1.5 mt-1.5">
-                    <span className="text-4xl sm:text-6xl font-black heading-font text-navy">1,562.50</span>
-                    <span className="text-sm font-semibold text-navy/80">{lang === "ar" ? "ريال سعودي" : "SAR"}</span>
-                  </div>
-                  <p className="text-xs text-navy/40 mt-1">
-                    {lang === "ar" ? "يعوض بـ" : "Equivalent to"} <span className="font-mono text-navy/80">SAR 18,750</span> {lang === "ar" ? "ممرضة سنويًا" : "per nurse / year"}
-                  </p>
-                </div>
-
-                {/* SECONDARY PRICE: PER UNIT */}
-                <div className="bg-navy/5 border border-navy/10 rounded-xl p-4 mb-6">
-                  <div className="flex justify-between items-center text-xs text-navy/50 mb-1">
-                    <span>{lang === "ar" ? "تكلفة الوحدة السكنية (الغرفة)" : "Cost Per Apartment Unit"}</span>
-                    <span className="font-semibold text-navy/70">{lang === "ar" ? "إشغال ثنائي" : "Double occupants"}</span>
-                  </div>
-                  <div className="flex flex-col xs:flex-row justify-between xs:items-baseline gap-1">
-                    <p className="text-sm sm:text-base text-navy/90 font-bold">
-                      <span className="text-navy font-mono font-black text-base sm:text-lg">3,125</span> {lang === "ar" ? "ريال / شهريًا" : "SAR / month"}
-                    </p>
-                    <p className="text-[11px] sm:text-xs font-mono text-navy/60">
-                      SAR 37,500 / {lang === "ar" ? "سنوياً" : "year"}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Benefits Bullet Points */}
-                <ul className="space-y-3.5 text-xs text-navy/80 mb-8">
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-                    <span>{lang === "ar" ? "مرونة أعلى في مدة التعاقد (عام واحد فقط)." : "Higher adaptability with single-year commitment."}</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-                    <span>{lang === "ar" ? "تسهيلات تناسب الميزانيات التجريبية أو التوسعات الطارئة." : "Perfect accommodation framework for exploratory pilot phases."}</span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-                    <span>{lang === "ar" ? "تغطي ذات الباقة للحلول الأساسية والخدمات التشغيلية." : "Identical deep level of facility standard management quality."}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <button 
-                onClick={() => handleScheduleVisit("flexible")}
-                className="w-full bg-navy hover:bg-[#2A3E64] text-white text-sm font-bold py-3 px-4 rounded-xl transition-all shadow-md mt-6"
-              >
-                {lang === "ar" ? "اختيار الباقة المرنة" : "Select Flexible Package"}
+                {lang === "ar" ? "طلب الباقة السكنية الآن" : "Request Standard Package"}
               </button>
 
             </div>
@@ -829,64 +743,44 @@ export default function App() {
                 </span>
               </div>
 
-              {/* Calculations side-by-side display */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-navy/5">
+              {/* Calculations display */}
+              <div className="pt-4 border-t border-navy/5">
                 
                 {/* Standard Card */}
-                <div className="bg-white border-2 border-gold rounded-2xl p-5 shadow-luxury flex flex-col justify-between">
+                <div className="bg-navy text-white rounded-2xl p-6 shadow-luxury flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center justify-between gap-2.5 mb-3">
-                      <p className="text-xs font-bold text-navy/60">{t.pricing.opt1Title}</p>
-                      <span className="text-[10px] bg-gold text-white font-extrabold px-2 py-0.5 rounded uppercase shrink-0">
-                        {lang === "ar" ? "باقة ٢٤ شهرًا" : "24-mo"}
+                    <div className="flex items-center justify-between gap-2.5 mb-4">
+                      <p className="text-xs font-bold text-white/75">{t.pricing.opt1Title}</p>
+                      <span className="text-[10px] bg-gold text-white font-extrabold px-2.5 py-1 rounded uppercase shrink-0">
+                        {lang === "ar" ? "باقة ٢٤ شهرًا" : "24-mo Commitment"}
                       </span>
                     </div>
-                    <p className="text-sm text-navy font-bold mt-2 font-mono">
-                      {lang === "ar" ? "شهريًا:" : "Monthly:"} <span className="text-gold font-semibold">SAR {(units * opt1PerUnitMonth).toLocaleString()}</span>
-                    </p>
-                    <p className="text-base text-navy font-black mt-1 font-mono">
-                      {lang === "ar" ? "سنويًا:" : "Annually:"} <span className="text-navy">SAR {opt1TotalAnnual.toLocaleString()}</span>
-                    </p>
-                  </div>
-                </div>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <p className="text-[11px] text-white/50">{lang === "ar" ? "التكلفة الشهرية للمجمع:" : "Total Monthly Cost:"}</p>
+                        <p className="text-xl sm:text-2xl font-black text-gold mt-1 font-mono">
+                          SAR {(units * perUnitMonth).toLocaleString()}
+                        </p>
+                      </div>
 
-                {/* Flexible Card */}
-                <div className="bg-white border border-gold/20 rounded-2xl p-5 shadow-luxury flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between gap-2.5 mb-3">
-                      <p className="text-xs font-bold text-navy/60">{t.pricing.opt2Title}</p>
-                      <span className="text-[10px] bg-navy/5 text-navy/65 font-bold px-2 py-0.5 rounded shrink-0">
-                        {lang === "ar" ? "باقة ١٢ شهرًا" : "12-mo"}
-                      </span>
+                      <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <p className="text-[11px] text-white/50">{lang === "ar" ? "التكلفة الكلية السنوية للمجمع:" : "Total Annual Cost:"}</p>
+                        <p className="text-xl sm:text-2xl font-black text-gold mt-1 font-mono">
+                          SAR {totalAnnual.toLocaleString()}
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-sm text-navy font-bold mt-2 font-mono">
-                      {lang === "ar" ? "شهريًا:" : "Monthly:"} <span>SAR {(units * opt2PerUnitMonth).toLocaleString()}</span>
-                    </p>
-                    <p className="text-base text-navy font-black mt-1 font-mono">
-                      {lang === "ar" ? "سنويًا:" : "Annually:"} <span>SAR {opt2TotalAnnual.toLocaleString()}</span>
+
+                    <p className="text-[11px] text-white/40 mt-3 text-center sm:text-right">
+                      {lang === "ar" 
+                        ? "* تعادل هذه الباقة تكلفة سكنية سنوية متميزة ومستقرة لطاقمكم الطبي بالكامل." 
+                        : "* This calculation offers a highly optimized corporate flat-rate residential budget with maximum long-term stability."}
                     </p>
                   </div>
                 </div>
 
               </div>
-
-              {/* Dynamic Savings Highlight */}
-              {totalSavings > 0 && (
-                <div className="bg-navy text-white rounded-2xl p-5 shadow-inner border border-gold/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 animate-pulse">
-                  <div>
-                    <p className="text-xs text-white/50">{t.pricing.calcSavings}</p>
-                    <p className="text-xl sm:text-2xl font-black text-gold mt-1 font-mono">
-                      SAR {totalSavings.toLocaleString()}
-                    </p>
-                  </div>
-                  <button 
-                    onClick={() => handleScheduleVisit("standard")}
-                    className="bg-gold hover:bg-[#b18e47] text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-all"
-                  >
-                    {lang === "ar" ? "احجز وفرك المالي العقدي" : "Secure Your Contract Savings"}
-                  </button>
-                </div>
-              )}
 
             </div>
           </div>
@@ -962,8 +856,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* 8) SIDE-BY-SIDE COMPARISON TABLE */}
-      <section className="py-20 bg-light-bg">
+      {/* 8) SINGLE SPECIFICATION & PRICING SUMMARY */}
+      <section className="py-20 bg-light-bg border-t border-navy/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -971,85 +865,74 @@ export default function App() {
             <p className="text-navy/60 mt-2 font-light">{t.pricing.comparisonSub}</p>
           </div>
 
-          <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-gold/20 overflow-hidden shadow-luxury">
+          <div className="max-w-2xl mx-auto bg-white rounded-3xl border border-gold/20 overflow-hidden shadow-luxury">
             
-            {/* Desktop Table view */}
-            <div className="overflow-x-auto">
-              <table className="w-full text-left" dir={isRTL ? "rtl" : "ltr"}>
-                <thead>
-                  <tr className="bg-navy text-white text-xs sm:text-sm font-semibold border-b border-navy/10">
-                    <th className="p-4 sm:p-5 text-start">{t.pricing.tableHeaders.feature}</th>
-                    <th className="p-4 sm:p-5 text-center bg-navy-light text-gold text-sm sm:text-base">{t.pricing.tableHeaders.opt1}</th>
-                    <th className="p-4 sm:p-5 text-center text-sm sm:text-base">{t.pricing.tableHeaders.opt2}</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-navy/5 text-xs sm:text-sm">
-                  
-                  {/* Row: Commitment */}
-                  <tr className="hover:bg-navy/[0.01] transition-colors">
-                    <td className="p-4 font-bold text-navy text-start">{t.pricing.tableRows.commitment}</td>
-                    <td className="p-4 text-center font-bold bg-navy/[0.02] text-navy text-start">{t.pricing.tableRows.commitmentValue1}</td>
-                    <td className="p-4 text-center text-navy/70">{t.pricing.tableRows.commitmentValue2}</td>
-                  </tr>
+            {/* Single Column Specification Summary */}
+            <div className="p-6 sm:p-10">
+              <div className="flex items-center gap-3 border-b border-navy/5 pb-4 mb-6">
+                <CheckCircle2 className="w-6 h-6 text-gold shrink-0" />
+                <h3 className="heading-font text-lg font-bold text-navy">
+                  {lang === "ar" ? "تفاصيل ومحددات الخدمة السكنية" : "Service Specifications & Pricing"}
+                </h3>
+              </div>
 
-                  {/* Row: Cost Per Nurse Month */}
-                  <tr className="hover:bg-navy/[0.01] transition-colors">
-                    <td className="p-4 font-bold text-navy text-start">{t.pricing.tableRows.nurseMonth}</td>
-                    <td className="p-4 text-center font-extrabold bg-navy/[0.02] text-gold">{t.pricing.tableRows.nurseMonth.includes("ممرضة") ? "١٬٣٢١ ريال" : "SAR 1,321"}</td>
-                    <td className="p-4 text-center text-navy/75 font-semibold">{t.pricing.tableRows.nurseMonth.includes("ممرضة") ? "١٬٥٦٢.٥٠ ريال" : "SAR 1,562.50"}</td>
-                  </tr>
+              <div className="space-y-4 text-xs sm:text-sm">
+                
+                {/* 1. Commitment */}
+                <div className="flex justify-between items-center py-3 border-b border-navy/5">
+                  <span className="font-semibold text-navy/70 text-start">{t.pricing.tableRows.commitment}</span>
+                  <span className="font-bold text-navy text-end">{t.pricing.tableRows.commitmentValue1}</span>
+                </div>
 
-                  {/* Row: Cost Per Nurse Year */}
-                  <tr className="hover:bg-navy/[0.01] transition-colors">
-                    <td className="p-4 font-bold text-navy text-start">{t.pricing.tableRows.nurseYear}</td>
-                    <td className="p-4 text-center font-bold bg-navy/[0.02] text-navy">{t.pricing.tableRows.nurseYear.includes("ممرضة") ? "١٥٬٨٥٠ ريال" : "SAR 15,850"}</td>
-                    <td className="p-4 text-center text-navy/70">{t.pricing.tableRows.nurseYear.includes("ممرضة") ? "١٨٬٧٥٠ ريال" : "SAR 18,750"}</td>
-                  </tr>
+                {/* 2. Cost Per Nurse Monthly */}
+                <div className="flex justify-between items-center py-3 border-b border-navy/5">
+                  <span className="font-semibold text-navy/70 text-start">{t.pricing.tableRows.nurseMonth}</span>
+                  <span className="font-extrabold text-gold text-end">{lang === "ar" ? "١٬٣٢١ ريال" : "SAR 1,321"}</span>
+                </div>
 
-                  {/* Row: Cost Per Unit Month */}
-                  <tr className="hover:bg-navy/[0.01] transition-colors">
-                    <td className="p-4 font-bold text-navy text-start">{t.pricing.tableRows.unitMonth}</td>
-                    <td className="p-4 text-center font-bold bg-navy/[0.02] text-navy">{t.pricing.tableRows.unitMonth.includes("وحدة") ? "٢٬٦٤٢ ريال" : "SAR 2,642"}</td>
-                    <td className="p-4 text-center text-navy/70">{t.pricing.tableRows.unitMonth.includes("وحدة") ? "٣٬١٢٥ ريال" : "SAR 3,125"}</td>
-                  </tr>
+                {/* 3. Cost Per Nurse Annual */}
+                <div className="flex justify-between items-center py-3 border-b border-navy/5">
+                  <span className="font-semibold text-navy/70 text-start">{t.pricing.tableRows.nurseYear}</span>
+                  <span className="font-bold text-navy text-end">{lang === "ar" ? "١٥٬٨٥٠ ريال" : "SAR 15,850"}</span>
+                </div>
 
-                  {/* Row: Cost Per Unit Year */}
-                  <tr className="hover:bg-navy/[0.01] transition-colors">
-                    <td className="p-4 font-bold text-navy text-start">{t.pricing.tableRows.unitYear}</td>
-                    <td className="p-4 text-center font-bold bg-navy/[0.02] text-navy">{t.pricing.tableRows.unitYear.includes("وحدة") ? "٣١٬٧٠٠ ريال" : "SAR 31,700"}</td>
-                    <td className="p-4 text-center text-navy/70">{t.pricing.tableRows.unitYear.includes("وحدة") ? "٣٧٬٥٠٠ ريال" : "SAR 37,500"}</td>
-                  </tr>
+                {/* 4. Cost Per Apartment Unit Month */}
+                <div className="flex justify-between items-center py-3 border-b border-navy/5">
+                  <span className="font-semibold text-navy/70 text-start">{t.pricing.tableRows.unitMonth}</span>
+                  <span className="font-bold text-navy text-end">{lang === "ar" ? "٢٬٦٤٢ ريال" : "SAR 2,642"}</span>
+                </div>
 
-                  {/* Row: Total Annual */}
-                  <tr className="hover:bg-navy/[0.01] transition-colors bg-gold/5">
-                    <td className="p-4 font-extrabold text-navy text-start">{t.pricing.tableRows.totalAnnual}</td>
-                    <td className="p-4 text-center font-black bg-navy/10 text-navy">{t.pricing.tableRows.totalAnnualValue1}</td>
-                    <td className="p-4 text-center text-navy/85 font-extrabold">{t.pricing.tableRows.totalAnnualValue2}</td>
-                  </tr>
+                {/* 5. Cost Per Apartment Unit Year */}
+                <div className="flex justify-between items-center py-3 border-b border-navy/5">
+                  <span className="font-semibold text-navy/70 text-start">{t.pricing.tableRows.unitYear}</span>
+                  <span className="font-bold text-navy text-end">{lang === "ar" ? "٣١٬٧٠٠ ريال" : "SAR 31,700"}</span>
+                </div>
 
-                  {/* Row: Essential */}
-                  <tr className="hover:bg-navy/[0.01] transition-colors">
-                    <td className="p-4 font-bold text-navy text-start">{t.pricing.tableRows.essentialServices}</td>
-                    <td className="p-4 text-center text-gold font-bold bg-navy/[0.02]">✓</td>
-                    <td className="p-4 text-center text-gold font-bold">✓</td>
-                  </tr>
+                {/* 6. Total Annual Price (158 units) */}
+                <div className="flex justify-between items-center py-3.5 border-b border-navy/5 bg-gold/5 px-4 rounded-xl">
+                  <span className="font-extrabold text-navy text-start">{t.pricing.tableRows.totalAnnual}</span>
+                  <span className="font-black text-navy text-end">{t.pricing.tableRows.totalAnnualValue1}</span>
+                </div>
 
-                  {/* Row: Value Adds */}
-                  <tr className="hover:bg-navy/[0.01] transition-colors">
-                    <td className="p-4 font-bold text-navy text-start">{t.pricing.tableRows.valueAddedServices}</td>
-                    <td className="p-4 text-center text-gold font-bold bg-navy/[0.02]">✓</td>
-                    <td className="p-4 text-center text-gold font-bold">✓</td>
-                  </tr>
+                {/* 7. Essential Utilities */}
+                <div className="flex justify-between items-center py-3 border-b border-navy/5">
+                  <span className="font-semibold text-navy/70 text-start">{t.pricing.tableRows.essentialServices}</span>
+                  <span className="font-bold text-gold text-end">✓ {lang === "ar" ? "مشمولة بالكامل" : "Fully Included"}</span>
+                </div>
 
-                  {/* Row: VAT */}
-                  <tr className="hover:bg-navy/[0.01] transition-colors bg-red-50/10">
-                    <td className="p-4 font-bold text-navy text-start">{t.pricing.tableRows.vat}</td>
-                    <td className="p-4 text-center text-red-600/90 font-medium bg-navy/[0.02]">{t.pricing.tableRows.vatExcluded}</td>
-                    <td className="p-4 text-center text-red-600/90 font-medium">{t.pricing.tableRows.vatExcluded}</td>
-                  </tr>
+                {/* 8. Value-Added Services */}
+                <div className="flex justify-between items-center py-3 border-b border-navy/5">
+                  <span className="font-semibold text-navy/70 text-start">{t.pricing.tableRows.valueAddedServices}</span>
+                  <span className="font-bold text-gold text-end">✓ {lang === "ar" ? "مشمولة بالكامل" : "Fully Included"}</span>
+                </div>
 
-                </tbody>
-              </table>
+                {/* 9. VAT */}
+                <div className="flex justify-between items-center py-3 text-red-600/90">
+                  <span className="font-semibold text-start">{t.pricing.tableRows.vat}</span>
+                  <span className="font-medium text-end">{t.pricing.tableRows.vatExcluded}</span>
+                </div>
+
+              </div>
             </div>
 
           </div>
