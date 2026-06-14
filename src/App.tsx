@@ -836,13 +836,20 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {t.services.valueAddedItems.map((item, idx) => (
-              <div key={idx} className="bg-light-bg rounded-2xl p-6 sm:p-7 border border-gold/20 shadow-luxury hover:border-gold hover:shadow-xl transition-all relative overflow-hidden group">
-                <div className="absolute right-0 top-0 w-1.5 h-0 bg-gold transition-all group-hover:h-full" />
-                <h4 className="heading-font font-bold text-navy mb-2 text-lg flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-gold rounded-full shrink-0" />
-                  {item.title}
-                </h4>
-                <p className="text-xs text-navy/60 leading-relaxed font-light">{item.desc}</p>
+              <div key={idx} className="bg-light-bg rounded-2xl p-6 sm:p-7 border border-gold/20 shadow-luxury hover:border-gold hover:shadow-xl transition-all relative overflow-hidden group flex flex-col justify-between">
+                <div>
+                  <div className="absolute right-0 top-0 w-1.5 h-0 bg-gold transition-all group-hover:h-full" />
+                  <h4 className="heading-font font-bold text-navy mb-2 text-lg flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-gold rounded-full shrink-0" />
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-navy/60 leading-relaxed font-light">{item.desc}</p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-navy/5 flex items-center justify-between">
+                  <span className="text-[10px] font-bold text-[#b18e47] bg-gold/10 px-2 py-0.5 rounded font-sans uppercase tracking-wider">
+                    {lang === "ar" ? "تُسعَّر عند الطلب" : "Priced on request"}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -923,7 +930,7 @@ export default function App() {
                 {/* 8. Value-Added Services */}
                 <div className="flex justify-between items-center py-3 border-b border-navy/5">
                   <span className="font-semibold text-navy/70 text-start">{t.pricing.tableRows.valueAddedServices}</span>
-                  <span className="font-bold text-gold text-end">✓ {lang === "ar" ? "مشمولة بالكامل" : "Fully Included"}</span>
+                  <span className="font-bold text-navy/60 text-end">{lang === "ar" ? "تُسعَّر عند الطلب" : "Priced on request"}</span>
                 </div>
 
                 {/* 9. VAT */}
