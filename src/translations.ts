@@ -161,7 +161,7 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
       title: "سكن متكامل لطاقمكم التمريضي",
       subtitle: "وحدات مؤثثة في حي العارض بالرياض، مخصّصة لطاقم التمريض في مستشفى المملكة. ١٥٨ وحدة، إشغال ثنائي، عقد واحد ومشغّل واحد.",
       metaDocId: "MATHWAA-KINGDOM-2026",
-      metaCommitment: "الالتزام ٢٤ شهرًا",
+      metaCommitment: "الالتزام ١٢ شهرًا",
       metaPriceFrom: "تبدأ من ١٬٣٢١ ريال / ممرضة / شهريًا",
       ctaSchedule: "جدولة زيارة ميدانية",
       interactiveNotice: "عرض مالي تفاعلي ومقترح معتمد لمشروع إسكان الطواقم الطبية",
@@ -173,7 +173,7 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
       nursesSub: "ممرضة (السعة القصوى)",
       distanceTitle: "١٢ كم · ٢٠ دقيقة",
       distanceSub: "المسافة والزمن من مستشفى المملكة",
-      optionsTitle: "٢٤",
+      optionsTitle: "١٢",
       optionsSub: "شهرًا مدة الالتزام للتعاقد",
       introParagraph: "تقدّم مثوى لمستشفى المملكة حلاً سكنيًا متكاملاً لطاقم التمريض في حي العارض بالرياض: ١٥٨ وحدة مؤثثة بإشغال ثنائي (ممرضتان لكل وحدة)، بسعة إجمالية تصل إلى ٣١٦ ممرضة، تُدار بالكامل تحت عقد واحد ومشغّل واحد ونقطة تواصل واحدة. جميع الساكنين من طاقم التمريض لضمان الخصوصية والتجانس المجمعي.",
     },
@@ -215,19 +215,19 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
       perUnitYear: "ريال / وحدة / سنويًا",
       vatDisclaimer: "جميع الأسعار المذكورة أعلاه لا تشمل ضريبة القيمة المضافة، وتُضاف فواتيرها تلقائيًا وفقًا للأنظمة والتعليمات الضريبية المعمول بها.",
       opt1Title: "الباقة القياسية الأساسية",
-      opt1Differentiator: "التزام ٢٤ شهرًا (أعلى توفير مالي للمستشفى)",
+      opt1Differentiator: "التزام ١٢ شهرًا (أعلى توفير مالي للمستشفى)",
       opt2Title: "",
       opt2Differentiator: "",
       comparisonTitle: "الملخص والبيان المالي للتعاقد",
       comparisonSub: "تفاصيل هيكل تسعير وتشغيل المجمع لعدد ١٥٨ وحدة سكنية مغطاة بالكامل",
       tableHeaders: {
         feature: "محددات الخدمة والمواصفات المالية",
-        opt1: "الباقة القياسية (٢٤ شهرًا)",
+        opt1: "الباقة القياسية (١٢ شهرًا)",
         opt2: "",
       },
       tableRows: {
         commitment: "مدة الالتزام والتعاقد",
-        commitmentValue1: "٢٤ شهرًا متواصلة",
+        commitmentValue1: "١٢ شهرًا متواصلة",
         commitmentValue2: "",
         nurseMonth: "التكلفة لكل ممرضة (شهريًا)",
         nurseYear: "التكلفة لكل ممرضة (سنوياً)",
@@ -247,7 +247,7 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
       calcCapacityNotice: "تستوعب هذه الوحدات ما يصل إلى {n} ممرضة (إشغال ثنائي)",
       calcAnnualCost: "التكلفة الكلية السنوية التقديرية للمجمع:",
       calcSavings: "",
-      calcSelectPackage: "باقة ٢٤ شهراً التشغيلية المعتمدة",
+      calcSelectPackage: "باقة ١٢ شهراً التشغيلية المعتمدة",
     },
     services: {
       essentialTitle: "الخدمات الأساسية والتشغيل",
@@ -295,7 +295,7 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
         },
         {
           q: "ما هي مدة الالتزام للتعاقد السكني؟",
-          a: "الباقة الأساسية تشترط التزاماً تشغيلياً لمدة ٢٤ شهراً لضمان توفير أعلى كفاءة مالية وأقل كلفة لكل ممرضة (١٬٣٢١ ريال شهرياً)."
+          a: "الباقة الأساسية تشترط التزاماً تشغيلياً لمدة ١٢ شهراً لضمان توفير أعلى كفاءة مالية وأقل كلفة لكل ممرضة (١٬٣٢١ ريال شهرياً)."
         },
         {
           q: "هل يمكن لممثلي مستشفى المملكة معاينة الوحدات والاطلاع عليها قبل التوقيع التشغيلي؟",
@@ -323,7 +323,7 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
     contact: {
       sectionTitle: "معلومات الاتصال وخاتمة المقترح",
       title: "إدارة علاقات الشركاء ومبيعات السكن",
-      role: "مدير العمليات والتشغيل المؤسسي",
+      role: "نائب الرئيس التنفيذي للتشغيل",
       phone: "+٩٦٦ ٥٦ ٢٧٩ ٧٢٩٠",
       email: "info@mathwaa.com",
       footerConfidential: "سري للغاية ومخصص لمستشفى المملكة حصرياً. يُحظر التداول الخارجي أو الاستنساخ دون إذن كتابي.",
@@ -346,7 +346,7 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
       title: "Complete Housing for Your Nursing Staff",
       subtitle: "Furnished units in Al Aarid, Riyadh, dedicated to Kingdom Hospital's nursing staff. 158 units, double occupancy, one operator, one contract.",
       metaDocId: "MATHWAA-KINGDOM-2026",
-      metaCommitment: "24-month commitment",
+      metaCommitment: "12-month commitment",
       metaPriceFrom: "Starts from SAR 1,321 / nurse / month",
       ctaSchedule: "Schedule a field visit",
       interactiveNotice: "B2B Interactive Pricing Proposal and Authorized Medical Housing Document",
@@ -358,7 +358,7 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
       nursesSub: "Nurses (maximum capacity limit)",
       distanceTitle: "12 km · 20 mins",
       distanceSub: "Distance & travel time from Kingdom Hospital",
-      optionsTitle: "24",
+      optionsTitle: "12",
       optionsSub: "Months contract commitment duration",
       introParagraph: "Mathwaa offers Kingdom Hospital a complete residential solution for nursing staff in Al Aarid, Riyadh: 158 furnished units at double occupancy (two nurses per unit), a total capacity of up to 316 nurses, managed end-to-end under a single contract, a single operator, and a single point of contact. All residents are exclusively nursing staff to maintain privacy and community cohesion.",
     },
@@ -400,19 +400,19 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
       perUnitYear: "SAR / unit / year",
       vatDisclaimer: "All listed prices exclude VAT, which will be computed and invoiced separately in compliance with official Saudi tax authority regulations.",
       opt1Title: "Standard Package",
-      opt1Differentiator: "24-month commitment (Max cost savings)",
+      opt1Differentiator: "12-month commitment (Max cost savings)",
       opt2Title: "",
       opt2Differentiator: "",
       comparisonTitle: "Operational & Pricing Summary",
       comparisonSub: "Detailed monetary breakdown of the annual and individual occupancy scopes for all 158 covered units",
       tableHeaders: {
         feature: "Contract Terms & Price Parameters",
-        opt1: "Standard Package (24-mo)",
+        opt1: "Standard Package (12-mo)",
         opt2: "",
       },
       tableRows: {
         commitment: "Commitment Term / Duration",
-        commitmentValue1: "24 consecutive months",
+        commitmentValue1: "12 consecutive months",
         commitmentValue2: "",
         nurseMonth: "Cost per nurse (monthly)",
         nurseYear: "Cost per nurse (annually)",
@@ -432,7 +432,7 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
       calcCapacityNotice: "These units will optimally house up to {n} nurses (Double Occupancy)",
       calcAnnualCost: "Estimated Total Annual Community Cost:",
       calcSavings: "",
-      calcSelectPackage: "Standard 24-Month Operational Package",
+      calcSelectPackage: "Standard 12-Month Operational Package",
     },
     services: {
       essentialTitle: "Essential Operational Services",
@@ -476,7 +476,7 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
       questions: [
         {
           q: "What is the key commitment duration required?",
-          a: "The Standard Package is based on a stable 24-month operational period, which guarantees the highly optimized pricing model of SAR 1,321/nurse/month."
+          a: "The Standard Package is based on a stable 12-month operational period, which guarantees the highly optimized pricing model of SAR 1,321/nurse/month."
         },
         {
           q: "Can Kingdom Hospital inspect the property before signing?",
@@ -504,7 +504,7 @@ export const translations: Record<"ar" | "en", TranslationDict> = {
     contact: {
       sectionTitle: "Contact Coordinates & Summary",
       title: "Partnership & Residential Growth Division",
-      role: "Director of Operations",
+      role: "Executive Vice President of Operations",
       phone: "+966 56 279 7290",
       email: "info@mathwaa.com",
       footerConfidential: "Strictly Confidential, prepared for Kingdom Hospital exclusively. External trade or photocopying is strictly forbidden.",

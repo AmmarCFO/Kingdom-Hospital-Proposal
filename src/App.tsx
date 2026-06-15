@@ -119,16 +119,16 @@ export default function App() {
     let message = "";
     if (pkg === "standard") {
       message = lang === "ar"
-        ? "مرحباً أ. ناصر (مدير العمليات)، نود الاستفسار وجدولة زيارة ميدانية للمجمع السكني وبحث اختيار الباقة الأساسية (التزام ٢٤ شهراً) لطاقم مستشفى المملكة."
-        : "Hello Mr. Nasser (Director of Operations), we would like to inquire about scheduling a site visit and discussing the Standard Package (24-month commitment) for Kingdom Hospital nursing staff.";
+        ? "مرحباً أ. ناصر (نائب الرئيس التنفيذي للتشغيل)، نود الاستفسار وجدولة زيارة ميدانية للمجمع السكني وبحث اختيار الباقة الأساسية (التزام ١٢ شهراً) لطاقم مستشفى المملكة."
+        : "Hello Mr. Nasser (Executive Vice President of Operations), we would like to inquire about scheduling a site visit and discussing the Standard Package (12-month commitment) for Kingdom Hospital nursing staff.";
     } else if (pkg === "flexible") {
       message = lang === "ar"
-        ? "مرحباً أ. ناصر (مدير العمليات)، نود الاستفسار وجدولة زيارة ميدانية للمجمع السكني وبحث اختيار الباقة المرنة (التزام ١٢ شهراً) لطاقم مستشفى المملكة."
-        : "Hello Mr. Nasser (Director of Operations), we would like to inquire about scheduling a site visit and discussing the Flexible Package (12-month commitment) for Kingdom Hospital nursing staff.";
+        ? "مرحباً أ. ناصر (نائب الرئيس التنفيذي للتشغيل)، نود الاستفسار وجدولة زيارة ميدانية للمجمع السكني وبحث اختيار الباقة المرنة (التزام ١٢ شهراً) لطاقم مستشفى المملكة."
+        : "Hello Mr. Nasser (Executive Vice President of Operations), we would like to inquire about scheduling a site visit and discussing the Flexible Package (12-month commitment) for Kingdom Hospital nursing staff.";
     } else {
       message = lang === "ar"
-        ? "مرحباً أ. ناصر (مدير العمليات)، نود الاستفسار وجدولة زيارة ميدانية لمجمع السكن بطاقم التمريض لمستشفى المملكة."
-        : "Hello Mr. Nasser (Director of Operations), we would like to inquire and schedule a field visit for the Kingdom Hospital nursing staff housing compound.";
+        ? "مرحباً أ. ناصر (نائب الرئيس التنفيذي للتشغيل)، نود الاستفسار وجدولة زيارة ميدانية لمجمع السكن بطاقم التمريض لمستشفى المملكة."
+        : "Hello Mr. Nasser (Executive Vice President of Operations), we would like to inquire and schedule a field visit for the Kingdom Hospital nursing staff housing compound.";
     }
     const whatsappUrl = `https://wa.me/966562797290?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
@@ -752,7 +752,7 @@ export default function App() {
                     <div className="flex items-center justify-between gap-2.5 mb-4">
                       <p className="text-xs font-bold text-white/75">{t.pricing.opt1Title}</p>
                       <span className="text-[10px] bg-gold text-white font-extrabold px-2.5 py-1 rounded uppercase shrink-0">
-                        {lang === "ar" ? "باقة ٢٤ شهرًا" : "24-mo Commitment"}
+                        {lang === "ar" ? "باقة ١٢ شهرًا" : "12-mo Commitment"}
                       </span>
                     </div>
                     
@@ -1103,8 +1103,8 @@ export default function App() {
                   {lang === "ar" ? "ن" : "N"}
                 </div>
                 <div>
-                  <h4 className="heading-font font-extrabold text-navy text-lg">{lang === "ar" ? "الاستاذ ناصر - مدير العمليات" : "Mr. Nasser - Director of Operations"}</h4>
-                  <p className="text-xs text-navy/55">{lang === "ar" ? "مدير العمليات والتشغيل المؤسسي" : "Director of Operations"}</p>
+                  <h4 className="heading-font font-extrabold text-navy text-lg">{lang === "ar" ? "الاستاذ ناصر - نائب الرئيس التنفيذي للتشغيل" : "Mr. Nasser - Executive Vice President of Operations"}</h4>
+                  <p className="text-xs text-navy/55">{lang === "ar" ? "نائب الرئيس التنفيذي للتشغيل" : "Executive Vice President of Operations"}</p>
                 </div>
               </div>
 
@@ -1339,8 +1339,8 @@ export default function App() {
       <a
         href={`https://wa.me/966562797290?text=${encodeURIComponent(
           lang === "ar"
-            ? "مرحباً أ. ناصر (مدير العمليات)، نود الاستفسار وجدولة زيارة ميدانية لمجمع السكن بطاقم التمريض لمستشفى المملكة."
-            : "Hello Mr. Nasser (Director of Operations), we would like to inquire and schedule a field visit for the Kingdom Hospital nursing staff housing compound."
+            ? "مرحباً أ. ناصر (نائب الرئيس التنفيذي للتشغيل)، نود الاستفسار وجدولة زيارة ميدانية لمجمع السكن بطاقم التمريض لمستشفى المملكة."
+            : "Hello Mr. Nasser (Executive Vice President of Operations), we would like to inquire and schedule a field visit for the Kingdom Hospital nursing staff housing compound."
         )}`}
         target="_blank"
         rel="noopener noreferrer"

@@ -39,7 +39,7 @@ html {
   font-family: "Tajawal", var(--font-sans);
 }
 [dir="rtl"] .heading-font {
-  font-family: "Amiri", var(--font-serif);
+  font-family: "Tajawal", var(--font-sans);
 }
 [dir="ltr"] .heading-font {
   font-family: "Playfair Display", var(--font-serif);
